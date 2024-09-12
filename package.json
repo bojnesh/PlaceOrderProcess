@@ -1,0 +1,23 @@
+{
+  "name": "placeorderprocessat",
+  "version": "1.0.0",
+  "description": "Place an order using the AT",
+  "main": "index.js",
+  "scripts": {
+
+    "run-tests": "cypress run",
+    "create-temp-email": "cypress run --spec 'cypress/e2e/1.createTempEmail.cy.js'",
+    "place-order": "cypress run --spec 'cypress/e2e/2.placeOrder.cy.js'",
+    "retrive-email-ids": "cypress run --spec 'cypress/e2e/3.retriveEmailIds.cy.js'",
+    "read-email": "cypress run --spec 'cypress/e2e/4.readEmailMessages.cy.js'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.14.1"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
