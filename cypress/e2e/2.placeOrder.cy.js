@@ -47,5 +47,19 @@ describe('Login to novodaily and place a order', () => {
     // Click Submit button
     cy.get('#confirmFormSubmit').click();
     cy.task('log', 'Submit pressed')
+
+    // Click Confirm order
+    cy.get('.checkout-confirm-tos-label').click();
+    cy.get('#confirmFormSubmit').click();
+
+
+    //Credit card info
+    cy.get('#card-number > div > input').click().type("5537975186077487", {force: true});;
+    
+   // cy.get('div.input-container input#cardNumber').click().type('5537975186077487')
+    cy.get('input[data-component-type="cardHolder"]').click({force:true}).type('Claire Heathcote-Hagenes Sr')
+    cy.get('input[data-component-type="expiryDate"]').click({force:true}).type('11/25')
+    cy.get('input[data-component-type="verificationCode"]').click({force:true}).type('597')
+    cy.get('#submit-button')
   })
 })
