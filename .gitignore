@@ -1,5 +1,4 @@
 
 cypress/downloads/emailContent.txt
 cypress/downloads/temp_email_data - Copy.txt
-cypress/e2e/1.createTempEmail.cy.js
 cypress/downloads/temp_email_data.txt
