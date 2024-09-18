@@ -6,7 +6,9 @@ describe('Create a temporary email using developermail.com API', () => {
     it('GET create a new temp email,and store in temp_email_data.txt', () => {
         cy.getTempEmail();
 
-        const filePath = path.join(Cypress.config('downloadsFolder'), 'temp_email_data.txt');
+        const filePath = path.join(Cypress.config('fixturesFolder'), 'temp_email_data.txt');
+        // Assert that the file exists
+        assert.isNotNull(filePath, 'File exists');
 
         cy.readFile(filePath, 'utf8').then((content) => {
             cy.task('log', 'Content of temp_email_data.txt:')
@@ -14,7 +16,7 @@ describe('Create a temporary email using developermail.com API', () => {
             let token = content.split('\n')[1].trim();
             cy.task('log', `Email is : ${email}@developermail.com`);
             cy.task('log', `Token is : ${token}`);
-
         });
+
     });
 });

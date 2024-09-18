@@ -1,6 +1,20 @@
 const fs = require('fs');
 const path = require('path');
 
+Cypress.Commands.add('captureConsoleLog', (message) => {
+    cy.task('log', message);
+});
+
+Cypress.Commands.add('getLastConsoleLog', () => {
+    return cy.task('getLastLog');
+});
+Cypress.Commands.add('addConsoleLog', (message) => {
+    cy.task('addToLogs', message);
+});
+Cypress.Commands.add('clearConsoleLogs', () => {
+    cy.task('clearLogs');
+});
+
 Cypress.Commands.add('getTempEmail', () => {
     cy.request({
         method: 'PUT',
@@ -19,7 +33,7 @@ Cypress.Commands.add('getTempEmail', () => {
         // Log the email and token (you can adapt this part as needed)
         cy.log(`Temporary Email: ${emailName}@developermail.com`);
         cy.log(`Token: ${token}`)
-        const filePath = path.join(Cypress.config('downloadsFolder'), 'temp_email_data.txt');
+        const filePath = path.join(Cypress.config('fixturesFolder'), 'temp_email_data.txt');
         cy.writeFile(filePath,`${emailName}\n${token}`, 'utf-8');
         // Return the email and token for further use in your tests
         //return { email: tempEmail, token };
@@ -27,7 +41,7 @@ Cypress.Commands.add('getTempEmail', () => {
 });
 
  Cypress.Commands.add('getEmailIds', () => {
-     const filePath = path.join(Cypress.config('downloadsFolder'), 'temp_email_data.txt');
+     const filePath = path.join(Cypress.config('fixturesFolder'), 'temp_email_data.txt');
      let email;
      let token;
 
@@ -48,7 +62,7 @@ Cypress.Commands.add('getTempEmail', () => {
              cy.log(`Email is: ${email}`);
              cy.log(`Token is: ${token}`);
              cy.log(`Message IDs: ${messageIds}`);
-             const filePath = path.join(Cypress.config('downloadsFolder'), 'temp_email_data.txt');
+             const filePath = path.join(Cypress.config('fixturesFolder'), 'temp_email_data.txt');
              cy.writeFile(filePath, `${email}\n${token}\n${messageIds}`, 'utf-8');
 
          });
@@ -89,7 +103,7 @@ function extractConfirmationLink(emailContent) {
 
 
 Cypress.Commands.add('getEmailMessages', () => {
-    const filePath = path.join(Cypress.config('downloadsFolder'), 'temp_email_data.txt');
+    const filePath = path.join(Cypress.config('fixturesFolder'), 'temp_email_data.txt');
 
     let email;
     let token;
@@ -117,7 +131,7 @@ Cypress.Commands.add('getEmailMessages', () => {
             cy.log(`Email Confirmation Link is: ${confirmationLink}`);
 
             // Create the file path
-            const filePath = path.join(Cypress.config('downloadsFolder'), 'emailContent.txt');
+            const filePath = path.join(Cypress.config('fixturesFolder'), 'emailContent.txt');
 
             // Write the content to the file
             cy.writeFile(filePath, `${bodyText}\n${confirmationLink}`, 'utf-8').then(() => {

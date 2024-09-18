@@ -4,7 +4,7 @@ const path = require("path");
 describe('Read Email IDs', () => {
     it('read temporary email ids', () => {
         cy.getEmailIds();
-        const filePath = path.join(Cypress.config('downloadsFolder'), 'temp_email_data.txt');
+        const filePath = path.join(Cypress.config('fixturesFolder'), 'temp_email_data.txt');
 
         cy.readFile(filePath, 'utf8').then((content) => {
             

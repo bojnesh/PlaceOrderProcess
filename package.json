@@ -4,7 +4,6 @@
   "description": "Place an order using the AT",
   "main": "index.js",
   "scripts": {
-
     "run-tests": "cypress run",
     "create-temp-email": "cypress run --spec 'cypress/e2e/1.createTempEmail.cy.js'",
     "place-order": "cypress run --spec 'cypress/e2e/2.placeOrder.cy.js'",
@@ -14,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.14.1"
+    "cypress": "^13.14.2"
   },
   "dependencies": {
     "fs": "^0.0.1-security",

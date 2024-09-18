@@ -1,0 +1,24 @@
+=20
+  Best&auml;tigung Deiner E-Mail-Adresse
+
+  
+    Hallo,
+    
+    vielen Dank f=C3=BCr Deine Registrierung bei NovoDaily.
+  
+
+  
+    Bitte best&auml;tige Deine E-Mail indem Du >> hier klickst <<.
+  
+
+  
+    Um Deine Analyseergebnisse, Deinen personalisierten Bedarf und Deinen personalisierten Plan sp&auml;ter einzusehen, ist die Best&auml;tigung Deines Accounts notwendig.
+  
+
+  
+    Alles Liebe,
+    
+    Dein NovoDaily Team
+  
+ =20
+https://ng-novoservices-stag-wa-is.azurewebsites.net/guest/confirmation?emailResetPasswordToken=Q2ZESjhDUXFOU0UzNXQxTmtkNXZqS0lYMjZKMEEzNWJoTDFhemM3aWtUOWdXZ25kVTJPck4rejRDS0VEZ1NSZm85NmpBcVNIT3hwWHg5REkrWDJ2M2FrU0NtNi8xTHFROHoxd0c3UERQOTFuczE3Vk1wa0hPZFc3YTRndEdXQzVtKy9YQjdXMmQ4d2hCY3FmcFlnRjMyY1lFcEFGOEI0NW5RTWNBM2IyNzdOdkdISFB3WG1janJtMC9YS29pMFhlT3owdjlUdW5hWXRvTENWb0x2ZkJiZFhNOEFYRjhSZFZHalpJRTd1TGlMdUtUQzlj&client_id=novodaily-shop&returnUrl=aHR0cHM6Ly90ZXN0LW5ldS5ub3ZvZGFpbHkuY29tL25nL3NpZ24taW4vbG9naW4&emailAddress=v-jowvc3%40developermail.com
