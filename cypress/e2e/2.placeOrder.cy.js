@@ -3,26 +3,16 @@ require('path');
 
 const path = require("path");
 const filePath = path.join(Cypress.config("fixturesFolder"), 'temp_email_data.txt');
-const redirects = path.join(Cypress.config("downloadsFolder"), 'redirects.txt');
 let email;
-let urls = [];
 
 describe('Login to novodaily and place a order', () => {
   beforeEach(() => {
-    cy.clearConsoleLogs();
-    urls = [];
     // Assuming there are input fields for username and password, and a login button
-    cy.visit("https://novodaily:Test1234@test-neu.novodaily.com/");
+    cy.visit("https://novodaily:Test1234@dev-neu.novodaily.com/");
   });
   it('Login to novodaily and place a order', () => {
-// Capture console log
-
     Cypress.on('url:changed', (newUrl) => {
-      urls.push(newUrl);
-
       console.log(newUrl);
-      //console.log(urls)
-
     });
     // Disable uncaught:exceptions
     Cypress.on('uncaught:exception', (err, runnable) => {
@@ -30,8 +20,6 @@ describe('Login to novodaily and place a order', () => {
       // failing the test
       return false
     })
-
-
 
     cy.task('log', 'Login page opened')
     // Order Standard package
@@ -63,17 +51,15 @@ describe('Login to novodaily and place a order', () => {
     cy.get('#addressCity').type('Leipzig');
     cy.get('#addressCountry').select('Deutschland');
     cy.get('#phonenumber').type('01765678901');
+
     // Click Submit button
-    //cy.task('log', urls[2]?.id);
     cy.get('#confirmFormSubmit').click();
-
-
-
 
     // Click Confirm order
     cy.get('.checkout-confirm-tos-label').click();
     cy.get('#confirmFormSubmit').click().wait(2000);
 
+    // Fill in payment details
     cy.get('#card-number > div > iframe')
         .should('be.visible')
         .then(($iframe) => {
